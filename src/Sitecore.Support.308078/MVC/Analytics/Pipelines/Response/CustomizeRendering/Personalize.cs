@@ -21,7 +21,10 @@ namespace Sitecore.Support.MVC.Analytics.Pipelines.Response.CustomizeRendering
     public override void Process(CustomizeRenderingArgs args)
     {
       Assert.ArgumentNotNull(args, "args");
-      if (!args.IsCustomized && Tracker.IsActive)
+      #region Modified code
+      // Removed obsolete Tracker.IsActive check
+      if (!args.IsCustomized)
+      #endregion
       {
         Evaluate(args);
       }
