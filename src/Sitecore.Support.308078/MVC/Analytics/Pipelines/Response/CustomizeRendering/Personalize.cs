@@ -22,7 +22,7 @@ namespace Sitecore.Support.MVC.Analytics.Pipelines.Response.CustomizeRendering
     {
       Assert.ArgumentNotNull(args, "args");
       #region Modified code
-      // Removed obsolete Tracker.IsActive check
+      // Removed Tracker.IsActive check for correct processing of excluded robots
       if (!args.IsCustomized)
       #endregion
       {
